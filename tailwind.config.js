@@ -15,6 +15,7 @@ export default {
         textgray: "#7e7e7e",
         sidebar: "#1D3B9E",
         logoarea: "#001455",
+        navbar: "#011C75",
       }
     },
   },

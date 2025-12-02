@@ -6,7 +6,7 @@ function Sidebar() {
         <>
         
         <div className="flex flex-col bg-sidebar min-h-screen justify-between">
-            <div className="flex flex-row bg-logoarea px-5 py-3 gap-1 justify-center items-center">
+            <div className="flex flex-row bg-logoarea px-5 py-3 gap-1 justify-center items-center h-16">
                 <Button className="bg-logoarea px-5">X</Button>
                 <Text variant="title" className="text-white text-xl">LOREM IPSUM</Text>
             </div>
