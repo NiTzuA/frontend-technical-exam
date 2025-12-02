@@ -12,7 +12,7 @@ function LoginForm () {
         <>
             <div className="flex flex-col justify-between min-h-screen items-stretch flex-1
                 px-6 sm:px-12 md:px-24">
-                <div className="flex flex-col gap-16">
+                <div className="flex flex-col gap-6 md:gap-16 py-6">
                     <div className="mt-24">
                         <Text variant="title" className="text-5xl">LOREM IPSUM</Text>
                         <Text variant="title" className="text-5xl">COMPANY</Text>

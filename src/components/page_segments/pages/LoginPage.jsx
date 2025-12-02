@@ -6,7 +6,7 @@ import Button from "../../ui/Button";
 function LoginPage () {
     return (
         <>
-            <div className="flex h-screen w-screen overflow-auto">
+            <div className="flex min-h-screen w-screen overflow-auto">
                 <LoginForm />
                 <img
                     src={HeroImage}
