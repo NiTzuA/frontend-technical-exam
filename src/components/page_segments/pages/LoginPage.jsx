@@ -6,13 +6,14 @@ import Button from "../../ui/Button";
 function LoginPage () {
     return (
         <>
-            <div className="flex h-screen w-screen overflow-hidden">
+            <div className="flex h-screen w-screen overflow-auto">
                 <LoginForm />
                 <img
                     src={HeroImage}
-                    className="object-cover"
+                    className="object-cover overflow-hidden hidden md:block"
                 />
             </div>
+
         </>
     );
 }

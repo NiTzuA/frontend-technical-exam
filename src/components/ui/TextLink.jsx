@@ -1,5 +1,6 @@
 const variants = {
-    normal: "text-textgray font-medium tracking-wide"
+    normal: "text-textgray font-medium tracking-wide",
+    highlight: "text-primary font-medium tracking-wide"
 } 
 
 
