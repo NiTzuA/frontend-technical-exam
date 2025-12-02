@@ -1,7 +1,5 @@
-import LoginForm from "../login/LoginForm";
-import IllustrationForm from "../login/IllustrationForm";
-import HeroImage from "../../../assets/hero_image.jpg"
-import Button from "../../ui/Button";
+import LoginForm from "../page_segments/login/LoginForm";
+import HeroImage from "../../assets/hero_image.jpg"
 
 function LoginPage () {
     return (

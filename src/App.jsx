@@ -1,13 +1,14 @@
 import './App.css'
-import LoginPage from './components/page_segments/pages/LoginPage'
-import LoginForm from './components/page_segments/login/LoginForm'
+import LoginPage from './components/pages/LoginPage'
+import Sidebar from './components/layout/Sidebar'
+
 
 
 function App() {
 
   return (
     <>
-      <LoginPage />
+      <Sidebar />
     </>
   )
 }

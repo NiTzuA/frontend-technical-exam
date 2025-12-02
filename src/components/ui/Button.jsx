@@ -6,7 +6,8 @@ const variants = {
     danger: "bg-red-600 text-white hover:bg-red-700", 
     google: "bg-white text-black hover:bg-gray-100 border border-textgray", 
     facebook: "bg-[#1877F2] text-white hover:bg-[#3e8ff7]", 
-    apple: "bg-black text-white hover:bg-gray-800", 
+    apple: "bg-black text-white hover:bg-gray-800",
+    sidebar: "bg-sidebar text-white hover:bg-[#3650A4] rounded-none" 
 };
 
 export default function Button ( {variant = "primary", className = "", img, imgWidth, imgHeight, ...props} ) {

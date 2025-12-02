@@ -13,6 +13,8 @@ export default {
         primary: "#011c75",
         accent: "#e2102d",
         textgray: "#7e7e7e",
+        sidebar: "#1D3B9E",
+        logoarea: "#001455",
       }
     },
   },
