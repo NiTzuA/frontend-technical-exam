@@ -1,7 +1,7 @@
-const base = "px-6 py-2 rounded-md font-medium transition";
+const base = "px-8 py-2 rounded-md font-medium transition";
 
 const variants = { 
-    primary: "bg-primary text-white hover:bg-blue-700", 
+    primary: "bg-primary text-white hover:bg-blue-900", 
     secondary: "bg-gray-200 text-gray-900 hover:bg-gray-300", 
     danger: "bg-red-600 text-white hover:bg-red-700", 
     google: "bg-white text-black hover:bg-gray-100 border border-textgray", 

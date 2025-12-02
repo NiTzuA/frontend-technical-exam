@@ -1,0 +1,20 @@
+import LoginForm from "../login/LoginForm";
+import IllustrationForm from "../login/IllustrationForm";
+import HeroImage from "../../../assets/hero_image.jpg"
+import Button from "../../ui/Button";
+
+function LoginPage () {
+    return (
+        <>
+            <div className="flex h-screen w-screen overflow-hidden">
+                <LoginForm />
+                <img
+                    src={HeroImage}
+                    className="object-cover"
+                />
+            </div>
+        </>
+    );
+}
+
+export default LoginPage
