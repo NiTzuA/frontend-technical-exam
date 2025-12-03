@@ -13,6 +13,7 @@
   {
     "id": 3,
     "name": "Reviews",
-    "value": "4.5/5.0"
+    "value": "4.5/5.0",
+    "image": "../assets/star.png"
   }
 ]
