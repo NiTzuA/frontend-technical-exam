@@ -3,17 +3,19 @@
   {
     "id": 1,
     "name": "Earnings",
-    "value": "96,420"
+    "value": "96,420",
+    "image": "https://raw.githubusercontent.com/NiTzuA/frontend-technical-exam/a0e117b65cf0788ecddba76b57aa9ff5bee52ffb/src/assets/dollar.png"
   },
   {
     "id": 2,
     "name": "Downloads",
-    "value": "900K"
+    "value": "900K",
+    "image": "https://raw.githubusercontent.com/NiTzuA/frontend-technical-exam/a0e117b65cf0788ecddba76b57aa9ff5bee52ffb/src/assets/download.png"
   },
   {
     "id": 3,
     "name": "Reviews",
     "value": "4.5/5.0",
-    "image": "../assets/star.png"
+    "image": "https://raw.githubusercontent.com/NiTzuA/frontend-technical-exam/a0e117b65cf0788ecddba76b57aa9ff5bee52ffb/src/assets/star.png"
   }
 ]
