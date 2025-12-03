@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "region": "North America",
+    "code": "NA",
+    "percentage": 76
+  },
+  {
+    "id": 2,
+    "region": "Europe",
+    "code": "EU",
+    "percentage": 84
+  },
+  {
+    "id": 3,
+    "region": "Asia Pacific",
+    "code": "AC",
+    "percentage": 91
+  },
+  {
+    "id": 4,
+    "region": "South America",
+    "code": "SA",
+    "percentage": 58
+  },
+  {
+    "id": 5,
+    "region": "Oceania",
+    "code": "OC",
+    "percentage": 69
+  },
+  {
+    "id": 6,
+    "region": "Middle East",
+    "code": "ME",
+    "percentage": 73
+  }
+]

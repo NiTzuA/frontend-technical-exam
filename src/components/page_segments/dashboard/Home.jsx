@@ -1,10 +1,13 @@
 import Text from "../../ui/Text";
 import Card from "../../ui/Card";
 import Button from "../../ui/Button";
+import ProgressBar from "../../ui/ProgressBar";
 import { useState, useEffect } from "react";
 import updatesDummy from "../../../data/updates.json";
 import calculationDummy from "../../../data/calculations.json"
 import messageDummy from "../../../data/messages.json"
+import regionDummy from "../../../data/regions.json"
+import UserIcon from "../../../assets/user_dark.png"
 
 
 function Home() {
@@ -12,6 +15,7 @@ function Home() {
     const [updates, setUpdates] = useState([]);
     const [calculations, setCalculations] = useState([]);
     const [messages, setMessages] = useState([]);
+    const [regions, setRegions] = useState([]);
 
     useEffect(() => {
         setCalculations(calculationDummy);
@@ -23,6 +27,10 @@ function Home() {
 
     useEffect(() => {
         setMessages(messageDummy)
+    });
+
+    useEffect(() => {
+        setRegions(regionDummy)
     });
 
     return (
@@ -80,8 +88,32 @@ function Home() {
                             </div>
                         </Card>
                         <div className="flex flex-row gap-3 justify-between flex-grow">
-                            <Card className="flex-grow">
+                            <Card>
+                                <div className="flex flex-col gap-4">
+                                    <img src={UserIcon} className="w-12 h-12" />
+                                    <div className="flex flex-col gap-0 text-left">
+                                        <Text>Active Users</Text>
+                                        <Text className="text-4xl">1,234,567</Text>
+                                        <Text className="text-xs font-normal !text-primary">5.1% Increase</Text>
+                                    </div>
+                                    <div className="flex flex-row">
+                                        <Text>Stats</Text>
+                                    </div>
+                                    <div className="flex flex-col gap-1">
+                                        {regions.map (rgn => (
+                                        <div key={rgn.map} className="flex flex-row gap-3 items-center justify-between">
+                                            <Text className="text-right">{rgn.code}</Text>
+                                            <ProgressBar
+                                                value={rgn.percentage}
+                                                color={rgn.id % 2 === 0 ? "bg-accent" : "bg-primary"}
+                                            />
+                                            <Text>{rgn.percentage}</Text>
+                                        </div>
+                                    ))}
+                                    </div>
+                                    
 
+                                </div>
                             </Card>
                             <Card>
                                 <div className="flex flex-col gap-4">
