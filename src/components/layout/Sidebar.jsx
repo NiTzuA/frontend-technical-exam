@@ -5,14 +5,12 @@ import DashboardIcon from "../../assets/home.png"
 import ProfileIcon from "../../assets/user.png"
 import SettingsIcon from "../../assets/settings.png"
 import LogoutIcon from "../../assets/logout.png"
-import { useState } from "react";
-import { useEffect } from "react";
 
 function Sidebar( {isScreenSmall, isMaximized, setIsMaximized, className} ) {
     return (
         <>
         
-        <div className={`flex flex-col bg-sidebar min-h-screen justify-between h-full ${className}`}>
+        <div className={`flex flex-col bg-sidebar min-h-screen justify-between h-full ${className} shrink-0`}>
             <div className="flex flex-row bg-logoarea pl-5 pr-5 py-3 gap-5 justify-center items-center h-16">
                 <Button 
                     className="bg-transparent hover:bg-transparent !px-2" 
