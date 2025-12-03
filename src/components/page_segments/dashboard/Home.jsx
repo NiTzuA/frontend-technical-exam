@@ -4,12 +4,14 @@ import Button from "../../ui/Button";
 import { useState, useEffect } from "react";
 import updatesDummy from "../../../data/updates.json";
 import calculationDummy from "../../../data/calculations.json"
+import messageDummy from "../../../data/messages.json"
 
 
 function Home() {
 
     const [updates, setUpdates] = useState([]);
     const [calculations, setCalculations] = useState([]);
+    const [messages, setMessages] = useState([]);
 
     useEffect(() => {
         setCalculations(calculationDummy);
@@ -18,6 +20,10 @@ function Home() {
     useEffect(() => {
         setUpdates(updatesDummy);
     }, []);
+
+    useEffect(() => {
+        setMessages(messageDummy)
+    });
 
     return (
         <>
@@ -77,8 +83,23 @@ function Home() {
                             <Card className="flex-grow">
 
                             </Card>
-                            <Card className="flex-grow">
-
+                            <Card>
+                                <div className="flex flex-col gap-4">
+                                    <div className="flex flex-row">
+                                        <Text>Unread Messages</Text>
+                                    </div>
+                                    {messages.map (msg => (
+                                        <div key={msg.map} className="flex flex-col gap-5">
+                                            <div className="flex flex-row gap-3">
+                                                <img src={msg.image} className="w-14 h-14 rounded-full"/>
+                                                <Text className="!text-accent">{msg.name}</Text>
+                                            </div>
+                                            <div className="flex flex-row justify-start items-start text-left">
+                                                <Text className="!text-primary text-xs">{msg.message}</Text>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </Card>
                         </div>
                     </div>
