@@ -5,6 +5,8 @@ import Navbar from './components/layout/Navbar.jsx'
 import Profile from './components/page_segments/dashboard/Profile.jsx'
 import Settings from './components/page_segments/dashboard/Settings.jsx'
 import Card from './components/ui/Card.jsx'
+import Home from './components/page_segments/dashboard/Home.jsx'
+
 import { useState } from 'react'
 import { useEffect } from 'react'
 
@@ -47,7 +49,7 @@ function App() {
         {!isSmallScreen || !isSidebarOpen ? (
           <div className='flex-grow flex flex-col'>
             <Navbar />
-            <Settings />
+            <Home />
           </div>
         ) : null}
       </div>
