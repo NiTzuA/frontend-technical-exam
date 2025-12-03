@@ -27,35 +27,50 @@ function Profile( {} ) {
                     <Button className="my-4">Edit Profile</Button>
                 </div>
 
-                <div className="border-2 border-black flex-grow flex flex-row justify-between">
-                    <div className="flex flex-col justify-between" >
-                        <div className="flex flex-col">
-                            <Text>FullName</Text>
+                <div className="flex flex-row justify-between">
+
+                    <div className="flex flex-col justify-between gap-6 p-6 flex-grow" >
+                        <div className="flex flex-col items-stretch gap-1">
+                            <div className="flex flex-row">
+                                <Text className="!text-black">Full Name</Text>
+                            </div>
                             <InputField type="text" placeholder="Your Full Name"></InputField>
                         </div>
-                        <div className="flex flex-col">
-                            <Text>FullName</Text>
-                            <InputField type="text" placeholder="Your Full Name"></InputField>
+                        <div className="flex flex-col items-stretch gap-1">
+                            <div className="flex flex-row">
+                                <Text className="!text-black">Gender</Text>
+                            </div>
+                            <InputField type="text" placeholder="Select Gender"></InputField>
                         </div>
-                        <div className="flex flex-col">
-                            <Text>FullName</Text>
-                            <InputField type="text" placeholder="Your Full Name"></InputField>
-                        </div>
-                    </div>
-                    <div className="flex flex-col justify-between" >
-                        <div className="flex flex-col">
-                            <Text>FullName</Text>
-                            <InputField type="text" placeholder="Your Full Name"></InputField>
-                        </div>
-                        <div className="flex flex-col">
-                            <Text>FullName</Text>
-                            <InputField type="text" placeholder="Your Full Name"></InputField>
-                        </div>
-                        <div className="flex flex-col">
-                            <Text>FullName</Text>
-                            <InputField type="text" placeholder="Your Full Name"></InputField>
+                        <div className="flex flex-col items-stretch gap-1">
+                            <div className="flex flex-row">
+                                <Text className="!text-black">Language</Text>
+                            </div>
+                            <InputField type="text" placeholder="Select Main Language"></InputField>
                         </div>
                     </div>
+
+                    <div className="flex flex-col justify-between gap-6 p-6 flex-grow" >
+                        <div className="flex flex-col items-stretch gap-1">
+                            <div className="flex flex-row">
+                                <Text className="!text-black">Full Name</Text>
+                            </div>
+                            <InputField type="text" placeholder="Your Full Name"></InputField>
+                        </div>
+                        <div className="flex flex-col items-stretch gap-1">
+                            <div className="flex flex-row">
+                                <Text className="!text-black">Gender</Text>
+                            </div>
+                            <InputField type="text" placeholder="Select Gender"></InputField>
+                        </div>
+                        <div className="flex flex-col items-stretch gap-1">
+                            <div className="flex flex-row">
+                                <Text className="!text-black">Language</Text>
+                            </div>
+                            <InputField type="text" placeholder="Select Main Language"></InputField>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div className="border-2 border-black flex-grow flex flex-col justify-between">
