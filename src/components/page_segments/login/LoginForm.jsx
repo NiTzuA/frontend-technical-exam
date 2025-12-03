@@ -7,7 +7,7 @@ import GoogleIcon from "../../../assets/google_icon.png";
 import AppleIcon from "../../../assets/apple_icon.png";
 import RightArrow from "../../../assets/right_arrow.png"
 
-function LoginForm () {
+function LoginForm ( {setCurrentPage} ) {
     return (
         <>
             <div className="flex flex-col justify-between min-h-screen items-stretch flex-1
@@ -36,7 +36,7 @@ function LoginForm () {
                 
                 <div className="flex flex-col gap-5">
                     <div>
-                        <Button variant="primary" img={RightArrow}  imgWidth="30px" imgHeight="30px"></Button>
+                        <Button variant="primary" img={RightArrow}  imgWidth="30px" imgHeight="30px" onClick={() => setCurrentPage("dashboard")}></Button>
                     </div>
 
                     <div className="bg-black mx-24 h-[1px]"/>

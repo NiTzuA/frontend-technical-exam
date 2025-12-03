@@ -6,7 +6,7 @@ import ProfileIcon from "../../assets/user.png"
 import SettingsIcon from "../../assets/settings.png"
 import LogoutIcon from "../../assets/logout.png"
 
-function Sidebar( {isScreenSmall, isMaximized, setIsMaximized, className} ) {
+function Sidebar( {isMaximized, setIsMaximized, className, setDashboardPage, setCurrentPage} ) {
     return (
         <>
         
@@ -16,7 +16,7 @@ function Sidebar( {isScreenSmall, isMaximized, setIsMaximized, className} ) {
                     className="bg-transparent hover:bg-transparent !px-2" 
                     img={BurgerIcon} 
                     imgWidth="30px" 
-                    imgHeigh="30px"
+                    imgHeight="30px"
                     onClick={() => setIsMaximized(prev => !prev)}
                 ></Button>
 
@@ -31,15 +31,15 @@ function Sidebar( {isScreenSmall, isMaximized, setIsMaximized, className} ) {
 
             </div>
             <div className="flex flex-col">
-                <Button variant="sidebar" className="text-left" img={DashboardIcon} imgWidth="30px" imgHeight="30px">{isMaximized && "Dashboard"}</Button>
-                <Button variant="sidebar" className="text-left" img={ProfileIcon} imgWidth="30px" imgHeight="30px">{isMaximized && "Profile"}</Button>
-                <Button variant="sidebar" className="text-left" img={SettingsIcon} imgWidth="30px" imgHeight="30px">{isMaximized && "Settings"}</Button>
+                <Button variant="sidebar" className="text-left" img={DashboardIcon} imgWidth="30px" imgHeight="30px" onClick={() => setDashboardPage("home")}>{isMaximized && "Dashboard"}</Button>
+                <Button variant="sidebar" className="text-left" img={ProfileIcon} imgWidth="30px" imgHeight="30px" onClick={() => setDashboardPage("profile")}>{isMaximized && "Profile"}</Button>
+                <Button variant="sidebar" className="text-left" img={SettingsIcon} imgWidth="30px" imgHeight="30px" onClick={() => setDashboardPage("settings")}>{isMaximized && "Settings"}</Button>
             </div>
             <div className="flex-grow">
 
             </div>
             <div className="flex flex-col py-3">
-                <Button variant="sidebar" className="text-left" img={LogoutIcon} imgWidth="30px" imgHeight="30px">{isMaximized && "Logout"}</Button>
+                <Button variant="sidebar" className="text-left" img={LogoutIcon} imgWidth="30px" imgHeight="30px" onClick={() => setCurrentPage("login")}>{isMaximized && "Logout"}</Button>
             </div>
         </div>
         

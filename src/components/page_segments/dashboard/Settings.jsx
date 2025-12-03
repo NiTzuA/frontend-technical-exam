@@ -17,7 +17,7 @@ function Settings() {
 
     return (
         <>
-            <div className="flex flex-col justify-between flex-wrap">
+            <div className="flex flex-col justify-between overflow-y-auto">
                 <div className="flex flex-col p-6 pt-16 gap-4 flex-grow">
                     <div className="flex flex-row">
                         <Text className="text-3xl !text-black">Settings</Text>
@@ -27,6 +27,8 @@ function Settings() {
                         {/* FUTURE AUSTIN, YOU COULD LITERALLY TURN ALL THE SETTINGS OBJECTS INTO A SINGLE COMPONENT
                             WRAAHHHHHHHHHHHHHHHHHHHHH
                             understandable since we're running out of time owo
+                            or u could've used a list
+                            lmao u need more sleep
                         */}
 
                         <div className="flex flex-col gap-5">

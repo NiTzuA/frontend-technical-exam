@@ -12,7 +12,7 @@ function Profile( {} ) {
     return (
         
         <>
-            <div className="flex-grow flex flex-col">
+            <div className="flex-grow flex flex-col overflow-y-auto">
                 <div className="">
                     <img
                     src={HeroImage}
