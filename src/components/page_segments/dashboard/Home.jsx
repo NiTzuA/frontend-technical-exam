@@ -8,6 +8,12 @@ import calculationDummy from "../../../data/calculations.json"
 import messageDummy from "../../../data/messages.json"
 import regionDummy from "../../../data/regions.json"
 import UserIcon from "../../../assets/user_dark.png"
+import Analytics from "../../ui/Analytics";
+import Calendar from "react-calendar";
+import 'react-calendar/dist/Calendar.css';
+import '../../../calendar.css'
+import TaskItem from "../../ui/TaskItem";
+import InputField from "../../ui/InputField";
 
 
 function Home() {
@@ -16,6 +22,13 @@ function Home() {
     const [calculations, setCalculations] = useState([]);
     const [messages, setMessages] = useState([]);
     const [regions, setRegions] = useState([]);
+    const [tasks, setTasks] = useState([
+        "Check Files",
+        "Center Div",
+        "Fix Database",
+    ])
+
+    const [newTask, setNewTask] = useState("")
 
     useEffect(() => {
         setCalculations(calculationDummy);
@@ -35,22 +48,44 @@ function Home() {
 
     return (
         <>
-            <div className="flex flex-col justsify-between items-stretch p-8 gap-3 flex-grow">
+            <div className="flex flex-col justify-between items-stretch p-8 gap-3 flex-grow h-full overflow-y-auto">
                 <div className="flex flex-row">
-                    <Text>Welcome, Jane Doe!</Text>
+                    <Text className="text-2xl !text-black">Welcome, Jane Doe!</Text>
                 </div>
-                <div className="flex flex-row gap-3 justify-between flex-grow">
-                    <div className="flex flex-col gap-3 flex-grow justify-between">
+                <div className="flex flex-row gap-6 flex-grow flex-wrap items-stretch">
+                    <div className="flex flex-col gap-3 justify-between flex-[1_1_24rem] min-w-[18rem]">
                         <Card className="flex-grow">
-                            <div>
+                            <div className="flex flex-col gap-3">
+                               <div className="flex flex-row">
+                                    <Text className="text-2xl !text-black">To-Do</Text>
+                                </div> 
+                                {tasks.map((t, i) => (
+                                    <TaskItem key={i} task={t} />
+                                ))}
+
+                                <InputField 
+                                    placeholder="Add a new task..."
+                                    type="text"
+                                    value={newTask}
+                                    onChange={e => setNewTask(e.target.value)}
+                                    onKeyDown={e => {
+                                    if (e.key === "Enter" && newTask.trim()) {
+                                        setTasks([...tasks, newTask])
+                                        setNewTask("")
+                                        }
+                                    }}
                                 
+                                />
                             </div>
                         </Card>
-                        <Card className="flex-grow">
-
+                        <Card className="">
+                            <div className="flex flex-row items-center justify-center">
+                                <Calendar />
+                            </div>
                         </Card>
                     </div>
-                    <div className="flex flex-col gap-3 flex-grow justify-between">
+                    <div className="flex flex-col gap-3 justify-between flex-[2_1_28rem] min-w-[22rem]">
+
                         <Card>
                             <div className="flex flex-col gap-4">
                                 <div className="flex flex-row">
