@@ -38,25 +38,32 @@ function DashboardPage( {setCurrentPage} ) {
 
     
     <>
-      <div className="flex flex-row w-full h-screen">
+      <div className={`flex w-full ${isSmallScreen ? "flex-col-reverse min-h-screen" : "flex-row h-screen"}`}>
+
           <Sidebar 
             isMaximized={isSidebarOpen}
             setIsMaximized={setIsSidebarOpen}
             setDashboardPage={setDashboardPage}
             setCurrentPage={setCurrentPage}
+            isSmallScreen={isSmallScreen}
             className={`${
               isSmallScreen && isSidebarOpen ? "flex-grow" : ""
             }`}
           />
 
         {!isSmallScreen || !isSidebarOpen ? (
-          <div className='flex-grow flex flex-col'>
-            <Navbar />
+            <div className="flex-grow flex flex-col">
+                <div className="shrink-0 sticky top-0 z-40 bg-logoarea">
+                <Navbar />
+                </div>
 
-            {dashboardPage === "home" && <Home />}
-            {dashboardPage === "profile" && <Profile />}
-            {dashboardPage === "settings" && <Settings />}
-          </div>
+                <div className={`flex-grow overflow-y-auto ${isSmallScreen ? "pb-16" : ""}`}>
+                {dashboardPage === "home" && <Home />}
+                {dashboardPage === "profile" && <Profile />}
+                {dashboardPage === "settings" && <Settings />}
+                </div>
+            
+            </div>
         ) : null}
       </div>
 

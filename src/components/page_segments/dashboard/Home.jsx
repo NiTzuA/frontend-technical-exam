@@ -52,7 +52,7 @@ function Home() {
                 <div className="flex flex-row">
                     <Text className="text-2xl !text-black">Welcome, Jane Doe!</Text>
                 </div>
-                <div className="flex flex-row gap-6 flex-grow flex-wrap items-stretch">
+                <div className="flex flex-col md:flex-row gap-6 flex-grow flex-wrap items-stretch">
                     <div className="flex flex-col gap-3 justify-between flex-[1_1_24rem] min-w-[18rem]">
                         <Card className="flex-grow">
                             <div className="flex flex-col gap-3">
@@ -112,7 +112,7 @@ function Home() {
                                 <div className="flex flex-row gap-5 justify-between">
                                     {calculations.map (calc => (
                                     <div key={calc.id} className="flex flex-row gap-3">
-                                        <img src={calc.image} className="w-14 h-14"></img>
+                                        <img src={calc.image} className="hidden md:block w-14 h-14"></img>
                                         <div className="flex flex-col justify-start items-start">
                                             <Text className="font-bold">{calc.name}</Text>
                                             <Text className="text-xl !text-accent">{calc.value}</Text>
