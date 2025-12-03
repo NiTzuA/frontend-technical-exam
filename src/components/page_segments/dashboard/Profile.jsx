@@ -2,7 +2,8 @@ import Text from "../../ui/Text";
 import Button from "../../ui/Button";
 import InputField from "../../ui/InputField";
 import HeroImage from "../../../assets/hero_image.jpg"
-
+import ProfileImg from "../../../assets/user_dark.png"
+import StarImg from "../../../assets/star.png"
 
 
 function Profile( {} ) {
@@ -21,7 +22,7 @@ function Profile( {} ) {
                 </div>
 
                 <div className="flex flex-row justify-between gap-5 p-6 flex-wrap">
-                    <Button variant="circular" className="h-20 w-20"></Button>
+                    <img src={ProfileImg} className="rounded-full h-20 w-20 border-2"/>
                     <div className="flex flex-col justify-center items-start">
                         <Text className="!font-bold !text-black text-xl">Jane Doe</Text>
                         <Text className="text-sm">janedoeofficial@gmail.com</Text>
@@ -80,7 +81,7 @@ function Profile( {} ) {
                 <div className="flex flex-col justify-between p-6 items-start gap-3">
                     <Text className="!text-black">Active Email Addresses</Text>
                     <div className="flex flex-row gap-3 pb-1">
-                        <Button></Button>
+                        <img src={StarImg} className="w-10 h-10"></img>
                         <div className="flex flex-col items-start">
                             <Text className="!text-black text-sm">janedoeofficial@gmail.com</Text>
                             <Text className="text-xs">Added 1 month ago</Text>

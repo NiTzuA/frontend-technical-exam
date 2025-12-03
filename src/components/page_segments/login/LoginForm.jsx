@@ -35,7 +35,7 @@ function LoginForm ( {setCurrentPage} ) {
                 
                 
                 <div className="flex flex-col gap-5">
-                    <div>
+                    <div className="flex flex-col items-center">
                         <Button variant="primary" img={RightArrow}  imgWidth="30px" imgHeight="30px" onClick={() => setCurrentPage("dashboard")}></Button>
                     </div>
 
@@ -43,9 +43,9 @@ function LoginForm ( {setCurrentPage} ) {
 
                     <div className="flex flex-col gap-3 items-center">
                         <div className="flex flex-col gap-4 sm:flex-row sm:gap-5">
-                            <Button variant="facebook" img={FacebookIcon} imgWidth="30px" imgHeight="30px" > </Button>
-                            <Button variant="google" img={GoogleIcon} imgWidth="30px" imgHeight="30px"> </Button>
-                            <Button variant="apple" img={AppleIcon} imgWidth="30px" imgHeight="30px"> </Button>
+                            <Button variant="facebook" img={FacebookIcon} imgWidth="30px" imgHeight="30px" onClick={() => setCurrentPage("dashboard")}> </Button>
+                            <Button variant="google" img={GoogleIcon} imgWidth="30px" imgHeight="30px" onClick={() => setCurrentPage("dashboard")}> </Button>
+                            <Button variant="apple" img={AppleIcon} imgWidth="30px" imgHeight="30px" onClick={() => setCurrentPage("dashboard")}> </Button>
                         </div>
 
                         <div className="flex flex-row gap-1">
