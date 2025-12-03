@@ -16,6 +16,7 @@ export default {
         sidebar: "#1D3B9E",
         logoarea: "#001455",
         navbar: "#011C75",
+        background: "#E2E2E2"
       }
     },
   },

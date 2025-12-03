@@ -5,7 +5,7 @@ import Text from "../ui/Text";
 function Navbar() {
     return (
         <>
-            <div className="bg-navbar h-16 flex flex-row py-3 px-10 items-center flex-grow">
+            <div className="bg-navbar h-16 flex flex-row py-3 px-10 items-center">
                 <InputField type="search" placeholder="Search" 
                 className="basis-64 shrink placeholder:text-sm text-sm rounded-full py-1"></InputField>
 

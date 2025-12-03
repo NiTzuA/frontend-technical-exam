@@ -2,6 +2,7 @@ import './App.css'
 import LoginPage from './components/pages/LoginPage'
 import Sidebar from './components/layout/Sidebar'
 import Navbar from './components/layout/Navbar.jsx'
+import Profile from './components/page_segments/dashboard/Profile.jsx'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
@@ -42,7 +43,10 @@ function App() {
           />
 
         {!isSmallScreen || !isSidebarOpen ? (
-          <Navbar />
+          <div className='flex-grow flex flex-col'>
+            <Navbar />
+            <Profile />
+          </div>
         ) : null}
       </div>
 
