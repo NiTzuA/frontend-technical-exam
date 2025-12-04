@@ -3,6 +3,7 @@ import Button from "../../ui/Button";
 import Card from "../../ui/Card";
 import Text from "../../ui/Text";
 import Toggle from "../../ui/Toggle";
+import Toast from "../../layout/Toasts";
 
 function Settings() {
 
@@ -13,6 +14,8 @@ function Settings() {
     const [updateAlerts, setUpdateAlerts] = useState(false)
     const [publicProfile, setPublicProfile] = useState(false)
     const [appearOnline, setAppearOnline] = useState(false)
+    const [showToast, setShowToast] = useState(false)
+    const [toastMessage, setToastMessage] = useState("")
 
 
     return (
@@ -149,11 +152,32 @@ function Settings() {
                 </div>
                 <div className="flex flex-col justify-start items-end flex-grow">
                     <div className="flex flex-row py-4 pr-4 items-start gap-4">
-                    <Button variant="secondary">Save</Button>
-                    <Button>Reset to Defaults</Button>
+                    <Button variant="secondary" onClick={() => {
+                            setShowToast(true) 
+                            setToastMessage("Settings saved successfully")
+                        }}>Save</Button>
+                    <Button
+                        onClick={() => {
+                            setToastMessage("Defaults have been restored")
+                            setShowToast(true)
+                            setDarkMode(false)
+                            setCompactMode(false)
+                            setEmailNotifs(false)
+                            setPushNotifs(false)
+                            setUpdateAlerts(false)
+                            setPublicProfile(false)
+                            setAppearOnline(false)
+                        }}
+                    >Reset to Defaults</Button>
                     </div>
                 </div>
             </div>
+            <Toast
+                show={showToast}
+                message={toastMessage}
+                onClose={() => setShowToast(false)}
+            />
+
         </>
     );
 }

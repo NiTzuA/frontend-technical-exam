@@ -9,12 +9,15 @@ import Languages from "../../../data/languages.json"
 import Genders from "../../../data/genders.json"
 import Countries from "../../../data/countries.json"
 import Timezones from "../../../data/timezones.json"
+import Toast from "../../layout/Toasts";
 import { useState } from "react";
 
 
 function Profile( {} ) {
 
     const [isDisabled, setIsDisabled] = useState(true)
+    const [showToast, setShowToast] = useState(false)
+    const [toastMessage, setToastMessage] = useState("")
 
     return (
         
@@ -34,7 +37,13 @@ function Profile( {} ) {
                         <Text className="text-sm">janedoeofficial@gmail.com</Text>
                     </div>
                     <div className="flex-grow"/>
-                    <Button variant="secondary" className="my-4" onClick={() => setIsDisabled(true)}>Save</Button>
+                    <Button variant="secondary" className="my-4" 
+                        onClick={() => {
+                            setIsDisabled(true)
+                            setToastMessage("Profile saved successfully")
+                            setShowToast(true)
+                        }}
+                    >Save</Button>
                     <Button className="my-4" onClick={() => setIsDisabled(false)}>Edit Profile</Button>
                 </div>
 
@@ -113,6 +122,13 @@ function Profile( {} ) {
                     <div className="p-5"/>
                 </div>
             </div>
+
+            <Toast
+                show={showToast}
+                message={toastMessage}
+                onClose={() => setShowToast(false)}
+                />
+
         </>
     );
 }
