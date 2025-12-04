@@ -4,11 +4,17 @@ import InputField from "../../ui/InputField";
 import HeroImage from "../../../assets/hero_image.jpg"
 import ProfileImg from "../../../assets/user_dark.png"
 import StarImg from "../../../assets/star.png"
+import Dropdown from "../../ui/Dropdown";
+import Languages from "../../../data/languages.json"
+import Genders from "../../../data/genders.json"
+import Countries from "../../../data/countries.json"
+import Timezones from "../../../data/timezones.json"
+import { useState } from "react";
 
 
 function Profile( {} ) {
 
-    
+    const [isDisabled, setIsDisabled] = useState(true)
 
     return (
         
@@ -28,8 +34,8 @@ function Profile( {} ) {
                         <Text className="text-sm">janedoeofficial@gmail.com</Text>
                     </div>
                     <div className="flex-grow"/>
-                    <Button variant="secondary" className="my-4">Save</Button>
-                    <Button className="my-4">Edit Profile</Button>
+                    <Button variant="secondary" className="my-4" onClick={() => setIsDisabled(true)}>Save</Button>
+                    <Button className="my-4" onClick={() => setIsDisabled(false)}>Edit Profile</Button>
                 </div>
 
                 <div className="flex flex-row justify-between flex-wrap">
@@ -39,19 +45,27 @@ function Profile( {} ) {
                             <div className="flex flex-row">
                                 <Text className="!text-black">Full Name</Text>
                             </div>
-                            <InputField type="text" placeholder="Your Full Name"></InputField>
+                            <InputField type="text" placeholder="Your Full Name" value="Jane Doe" disabled={isDisabled}></InputField>
                         </div>
                         <div className="flex flex-col items-stretch gap-1">
                             <div className="flex flex-row">
                                 <Text className="!text-black">Gender</Text>
                             </div>
-                            <InputField type="text" placeholder="Select Gender"></InputField>
+                            <Dropdown
+                                options={Genders}
+                                defaultValue="male"
+                                disabled={isDisabled}
+                            />
                         </div>
                         <div className="flex flex-col items-stretch gap-1">
                             <div className="flex flex-row">
                                 <Text className="!text-black">Language</Text>
                             </div>
-                            <InputField type="text" placeholder="Select Main Language"></InputField>
+                            <Dropdown
+                                options={Languages}
+                                defaultValue="en"
+                                disabled={isDisabled}
+                            />
                         </div>
                     </div>
 
@@ -60,19 +74,27 @@ function Profile( {} ) {
                             <div className="flex flex-row">
                                 <Text className="!text-black">Username</Text>
                             </div>
-                            <InputField type="text" placeholder="Preferred Username"></InputField>
+                            <InputField type="text" placeholder="Preferred Username" value="JaneyDoverman" disabled={isDisabled}></InputField>
                         </div>
                         <div className="flex flex-col items-stretch gap-1">
                             <div className="flex flex-row">
                                 <Text className="!text-black">Country</Text>
                             </div>
-                            <InputField type="text" placeholder="Select Country"></InputField>
+                            <Dropdown
+                                options={Countries}
+                                defaultValue="ph"
+                                disabled={isDisabled}
+                            />
                         </div>
                         <div className="flex flex-col items-stretch gap-1">
                             <div className="flex flex-row">
                                 <Text className="!text-black">Timezone</Text>
                             </div>
-                            <InputField type="text" placeholder="Select Time Zone"></InputField>
+                            <Dropdown
+                                options={Timezones}
+                                defaultValue="Asia/Manila"
+                                disabled={isDisabled}
+                            />
                         </div>
                     </div>
 
