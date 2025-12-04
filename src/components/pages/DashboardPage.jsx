@@ -17,15 +17,15 @@ function DashboardPage( {setCurrentPage} ) {
   const [dashboardPage, setDashboardPage] = useState("home");
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setIsSmallScreen(true);
-        setIsSidebarOpen(false);
-      } else {
-        setIsSmallScreen(false);
-        setIsSidebarOpen(true);
-      }
-    };
+      const handleResize = () => {
+          if (window.innerWidth < 768) {
+              setIsSmallScreen(true);
+              setIsSidebarOpen(false);
+          } else {
+              setIsSmallScreen(false);
+              setIsSidebarOpen(true);
+          }
+      };
 
     handleResize();
 
@@ -34,9 +34,6 @@ function DashboardPage( {setCurrentPage} ) {
   }, []);
 
   return (
-
-
-    
     <>
       <div className={`flex w-full ${isSmallScreen ? "flex-col-reverse min-h-screen" : "flex-row h-screen"}`}>
 
@@ -66,8 +63,6 @@ function DashboardPage( {setCurrentPage} ) {
             </div>
         ) : null}
       </div>
-
-      
     </>
   )
 }

@@ -18,7 +18,8 @@ function Profile( {} ) {
     const [isDisabled, setIsDisabled] = useState(true)
     const [showToast, setShowToast] = useState(false)
     const [toastMessage, setToastMessage] = useState("")
-
+    const [fullName, setFullName] = useState("Jane Doe")
+    const [userName, setUserName] = useState("JaneDoneness")
     return (
         
         <>
@@ -54,7 +55,7 @@ function Profile( {} ) {
                             <div className="flex flex-row">
                                 <Text className="!text-black">Full Name</Text>
                             </div>
-                            <InputField type="text" placeholder="Your Full Name" value="Jane Doe" disabled={isDisabled}></InputField>
+                            <InputField type="text" placeholder="Your Full Name" value={fullName} disabled={isDisabled} onChange={(e) => setFullName(e.target.value)}></InputField>
                         </div>
                         <div className="flex flex-col items-stretch gap-1">
                             <div className="flex flex-row">
@@ -83,7 +84,7 @@ function Profile( {} ) {
                             <div className="flex flex-row">
                                 <Text className="!text-black">Username</Text>
                             </div>
-                            <InputField type="text" placeholder="Preferred Username" value="JaneyDoverman" disabled={isDisabled}></InputField>
+                            <InputField type="text" placeholder="Preferred Username" value={userName} disabled={isDisabled} onChange={(e) => setUserName(e.target.value)}></InputField>
                         </div>
                         <div className="flex flex-col items-stretch gap-1">
                             <div className="flex flex-row">
@@ -127,7 +128,7 @@ function Profile( {} ) {
                 show={showToast}
                 message={toastMessage}
                 onClose={() => setShowToast(false)}
-                />
+            />
 
         </>
     );
