@@ -2,7 +2,11 @@ import Card from "./Card"
 import Text from "./Text";
 import { useState } from "react";
 
-function TaskItem( {task = "", ...props} ) {
+interface TaskItemProps {
+    task?: string;
+}
+
+function TaskItem( {task = "", ...props}: TaskItemProps ) {
 
     const [checked, setChecked] = useState(false);
     if (checked) return null;
