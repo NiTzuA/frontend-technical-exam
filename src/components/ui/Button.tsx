@@ -9,9 +9,26 @@ const variants = {
     apple: "bg-black text-white hover:bg-gray-800",
     sidebar: "h-16 bg-sidebar text-white hover:bg-[#3650A4] rounded-none", 
     circular: "w-6 h-6 !rounded-full bg-white !px-0 !py-0"
-};
+} as const;
 
-export default function Button ( {variant = "primary", className = "", img, imgWidth, imgHeight, ...props} ) {
+type Variant = keyof typeof variants;
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    variant?: Variant;
+    className?: string;
+    img?: string;
+    imgWidth?: number | string;
+    imgHeight?: number | string;
+}
+
+export default function Button ({
+    variant = "primary", 
+    className = "", 
+    img, 
+    imgWidth, 
+    imgHeight, 
+    ...props
+}: ButtonProps ) {
     return (
         <button
             {...props}
