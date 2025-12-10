@@ -1,4 +1,9 @@
-export default function Toggle({ checked, onChange }) {
+interface ToggleProps {
+  checked: boolean;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+}
+
+export default function Toggle({ checked, onChange }: ToggleProps) {
   return (
     <label className="relative inline-flex items-center cursor-pointer">
       <input
